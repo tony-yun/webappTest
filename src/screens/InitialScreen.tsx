@@ -1,22 +1,24 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
-import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import React from 'react';
+import {useNavigation} from '@react-navigation/native';
 
-function App(): React.JSX.Element {
+const DetailScreen = () => {
+  const navigation = useNavigation();
+  const handleWebView = () => {
+    console.log('handleWebView pressed');
+    navigation.navigate('WebviewScreen');
+  };
+
   return (
     <View style={styles.mainView}>
-      <TouchableOpacity style={styles.buttonStyle}>
+      <TouchableOpacity style={styles.buttonStyle} onPress={handleWebView}>
         <Text style={styles.textStyle}>웹뷰로 이동</Text>
       </TouchableOpacity>
     </View>
   );
-}
+};
+
+export default DetailScreen;
 
 const styles = StyleSheet.create({
   mainView: {
@@ -34,5 +36,3 @@ const styles = StyleSheet.create({
     color: 'white',
   },
 });
-
-export default App;
