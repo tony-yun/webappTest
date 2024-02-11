@@ -1,6 +1,7 @@
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React from 'react';
 import {useNavigation} from '@react-navigation/native';
+import LottieView from 'lottie-react-native';
+import React from 'react';
+import {StyleSheet, View} from 'react-native';
 
 const DetailScreen = () => {
   const navigation = useNavigation();
@@ -11,9 +12,12 @@ const DetailScreen = () => {
 
   return (
     <View style={styles.mainView}>
-      <TouchableOpacity style={styles.buttonStyle} onPress={handleWebView}>
-        <Text style={styles.textStyle}>웹뷰로 이동</Text>
-      </TouchableOpacity>
+      {/* <LottieView
+        source={require('../res/selling.json')}
+        style={{width: '100%', height: '100%'}}
+        autoPlay
+        loop
+      /> */}
     </View>
   );
 };
@@ -25,6 +29,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'white',
   },
   buttonStyle: {
     padding: 20,
